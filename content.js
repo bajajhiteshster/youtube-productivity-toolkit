@@ -1,50 +1,43 @@
 (function () {
 
-function removeAds() {
+    function handleAds() {
+        const video = document.querySelector('video');
+        if (!video) return;
 
-    const video = document.querySelector('video');
+        const adPlaying = document.querySelector('.ad-showing');
 
-    // If ad is playing
-    if (document.querySelector('.ad-showing')) {
-
-        if (video) {
+        if (adPlaying) {
+            // Mute ad
             video.muted = true;
-            video.playbackRate = 16;
-            video.currentTime = video.duration;
+
+            // Fast-forward ad safely
+            if (!isNaN(video.duration) && video.duration > 0 && isFinite(video.currentTime)) {
+                video.playbackRate = 16; // only during ad
+                video.currentTime = Math.min(video.duration - 0.1, video.currentTime + 0.5);
+            }
+
+            // Click Skip Ad button if visible
+            const skipBtn = document.querySelector(
+                '.ytp-ad-skip-button, .ytp-ad-skip-button-modern'
+            );
+            if (skipBtn) skipBtn.click();
+        } 
+        else {
+            // Do NOT set playbackRate here
+            // Let YouTube control normal video speed
+            video.muted = false;
         }
 
-        // Skip button
-        const skip = document.querySelector(
-            '.ytp-ad-skip-button, .ytp-ad-skip-button-modern'
-        );
-
-        if (skip) {
-            skip.click();
-        }
+        // Close overlay/banner ads
+        const overlay = document.querySelector('.ytp-ad-overlay-close-button');
+        if (overlay) overlay.click();
     }
 
-    // Close banner ads
-    const banner = document.querySelector('.ytp-ad-overlay-close-button');
+    // Observe DOM changes for dynamic ad elements
+    const observer = new MutationObserver(handleAds);
+    observer.observe(document.body, { childList: true, subtree: true });
 
-    if (banner) {
-        banner.click();
-    }
-
-    // Optional: set normal playback speed
-    if (video && !document.querySelector('.ad-showing')) {
-        video.playbackRate = 1.25;
-    }
-}
-
-// Observe page changes
-const observer = new MutationObserver(removeAds);
-
-observer.observe(document.body, {
-    childList: true,
-    subtree: true
-});
-
-// Run repeatedly
-setInterval(removeAds, 500);
+    // Backup interval in case observer misses
+    setInterval(handleAds, 500);
 
 })();
