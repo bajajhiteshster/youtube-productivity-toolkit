@@ -1,11 +1,12 @@
-# YouTube Pro Ad Killer
+# YouTube Productivity Toolkit
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Chrome-orange)
 ![Status](https://img.shields.io/badge/status-active-success)
 
-A lightweight Chrome extension that instantly skips ads on YouTube and improves the viewing experience.
+A lightweight Chrome extension that improves the YouTube viewing experience with smart playback and productivity features.
+
 
 ---
 
