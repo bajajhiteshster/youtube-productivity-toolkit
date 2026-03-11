@@ -12,10 +12,10 @@ A lightweight Chrome extension that improves the YouTube viewing experience with
 
 ## Features
 
-• Skip interruptions automatically
-• Cleaner viewing experience
-• Hide YouTube Shorts
-• Focus mode (hide distractions)
+• Automatically skip interruptions while watching YouTube  
+• Clean video viewing experience  
+• Remove distracting banners and overlays  
+• Hide Shorts (optional focus mode)
 • Lightweight Chrome extension
 
 This extension runs locally in your browser and does **not collect any user data**.
