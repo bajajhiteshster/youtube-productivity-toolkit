@@ -12,11 +12,11 @@ A lightweight Chrome extension that improves the YouTube viewing experience with
 
 ## Features
 
-* Instantly skips YouTube ads
-* Automatically jumps to the end of video ads
-* Speeds up ads to reduce wait time
-* Closes banner and overlay ads
-* Optional playback speed enhancement
+• Skip interruptions automatically
+• Cleaner viewing experience
+• Hide YouTube Shorts
+• Focus mode (hide distractions)
+• Lightweight Chrome extension
 
 This extension runs locally in your browser and does **not collect any user data**.
 

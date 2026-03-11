@@ -1,13 +1,20 @@
 {
   "manifest_version": 3,
   "name": "YouTube Productivity Toolkit",
-  "version": "1.1",
-  "description": "Improve your YouTube experience with smart playback, focus mode, and productivity features.",
+  "version": "1.1.0",
+  "description": "Improve your YouTube experience with smart playback and productivity tools.",
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"]
 }
