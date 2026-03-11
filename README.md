@@ -117,5 +117,5 @@ MIT License
 ---
 
 ## Author
-
+Published by FlowKit Labs
 Built as a small open-source project by an engineer passionate about productivity tools.
